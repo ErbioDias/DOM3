@@ -20,10 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return `${dia}/${mes}/${ano} ${horas}:${minutos}`;
     };
     
-    /**
-     * Renderiza a tabela de tarefas com base no array 'tarefas'.
-     * Esta função central atualiza a UI sempre que os dados mudam.
-     */
+   
     const renderizarTabela = () => {
         tabelaBody.innerHTML = ''; // Limpa a tabela antes de redesenhar
 
@@ -52,9 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    /**
-     * Adiciona uma nova tarefa ao array e atualiza a tabela.
-     */
+    
     const adicionarTarefa = () => {
         const descricaoTarefa = descricaoInput.value.trim();
 
@@ -114,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderizarTabela();
     };
 
-    // --- Event Listeners ---
+    
     adicionarBtn.addEventListener('click', adicionarTarefa);
     descricaoInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
