@@ -1,20 +1,14 @@
-// script.js
-
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Elementos do DOM ---
+ 
     const descricaoInput = document.getElementById('descricaoTarefa');
     const adicionarBtn = document.getElementById('adicionarBtn');
     const tabelaBody = document.querySelector('#tabelaTarefas tbody');
 
-    // --- Estado da Aplicação ---
+    
     let idCounter = 1;
-    let tarefas = []; // Array que representa os "dados reais"
+    let tarefas = []; 
 
-    /**
-     * Formata um objeto Date para o formato dd/mm/aaaa hh:mm:ss.
-     * @param {Date} data - O objeto Date a ser formatado.
-     * @returns {string} - A data formatada.
-     */
+
     const formatarData = (data) => {
         if (!data) return "";
         const d = new Date(data);
@@ -87,10 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderizarTabela();
     };
 
-    /**
-     * Manipula os cliques nos botões de ação da tabela (Concluir, Excluir, Reabrir).
-     * Utiliza a delegação de eventos para eficiência.
-     */
+    
     const manipularAcoesTabela = (e) => {
         const target = e.target;
         const id = parseInt(target.parentElement.getAttribute('data-id'));
@@ -119,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tarefa.dataConclusao = "";
         }
 
-        // Re-renderiza a tabela para refletir as mudanças nos dados
+        
         renderizarTabela();
     };
 
